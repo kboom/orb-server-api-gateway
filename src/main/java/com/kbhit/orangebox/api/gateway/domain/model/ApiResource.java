@@ -15,4 +15,12 @@ public class ApiResource implements Serializable {
     @Column(unique = true)
     private String url;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
 }

@@ -1,0 +1,58 @@
+{"resources": [
+    {
+      "name": "USER_TRADES.GET_SOME_INCOMING",
+      "url": "/trades/incoming"
+    },
+    {
+      "name": "USER_TRADES.GET_SOME_OUTGOING",
+      "url": "/trades/outgoing"
+    },
+    {
+      "name": "ITEMS.GET_ONE",
+      "url": "/items/<item_id>"
+    },
+    {
+      "name": "ITEMS.GET_SOME",
+      "url": "/items"
+    },
+    {
+      "name": "TRADE_ITEMS.GET_SOME_TRADE_ITEMS",
+      "url": "/box/<box_id>/traded"
+    },
+    {
+      "name": "TRADE_ITEMS.GET_ALL_BY_IDS",
+      "url": "/trade-items"
+    },
+    {
+      "name": "ITEM_CATEGORY.GET_ONE",
+      "url": "/categories/<category_id>"
+    },
+    {
+      "name": "ITEM_CATEGORY.GET_ALL_PARENT",
+      "url": "/categories/parent"
+    },
+    {
+      "name": "GATHERED_ITEMS.GET_SOME",
+      "url": "/items/gathered"
+    },
+    {
+      "name": "BOXED_ITEMS.GET_SOME",
+      "url": "/box/<box_id>/items"
+    },
+    {
+      "name": "TRADES.GET_TRADE",
+      "url": "/trade/<trade_id>"
+    },
+    {
+      "name": "TRADES.POST_TRADE",
+      "url": "/trades"
+    },
+    {
+      "name": "BIDS.GET_LATEST",
+      "url": "/trades/<trade_id>/bids/latest"
+    },
+    {
+      "name": "TAGS.FIND_MATCHING",
+      "url": "/tags"
+    }
+]}

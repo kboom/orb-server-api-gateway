@@ -46,6 +46,7 @@ dependencies {
     testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.4'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.0-groovy-2.4'
     testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+    testCompile group: 'com.jayway.restassured', name: 'json-schema-validator', version: '2.9.0'
 }
 
 task stage {

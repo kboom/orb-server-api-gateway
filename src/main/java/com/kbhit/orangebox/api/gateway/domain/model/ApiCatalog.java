@@ -1,5 +1,7 @@
 package com.kbhit.orangebox.api.gateway.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class ApiCatalog implements Serializable {
 
+    @JsonProperty
     private List<ApiResource> resources;
 
     public static ApiCatalogBuilder apiCatalog() {

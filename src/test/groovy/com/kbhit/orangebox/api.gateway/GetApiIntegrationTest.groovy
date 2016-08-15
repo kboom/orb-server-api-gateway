@@ -5,16 +5,19 @@ import com.kbhit.orangebox.api.gateway.TestDataLoader
 import org.springframework.beans.factory.annotation.Autowired
 
 import static com.jayway.restassured.RestAssured.given
-
+import static com.jayway.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath
 
 class GetApiIntegrationTest extends AbstractIntegrationTest {
 
     @Autowired
     TestDataLoader testDataLoader
 
-    def "Gets api from the database"() {
+    def setup() {
+        testDataLoader.reloadTestData()
+    }
+
+    def "Gets api"() {
         given:
-        testDataLoader.loadTestData()
         def request = given()
                 .contentType("application/json")
         when:
@@ -22,6 +25,17 @@ class GetApiIntegrationTest extends AbstractIntegrationTest {
 
         then:
         response.then().statusCode(200);
+    }
+
+    def "Gets api - resource list"() {
+        given:
+        def request = given()
+                .contentType("application/json")
+        when:
+        def response = request.when().get("/api")
+
+        then:
+        response.then().body(matchesJsonSchemaInClasspath("api.json"))
     }
 
 }

@@ -2,12 +2,13 @@ package com.kbhit.orangebox.api.gateway;
 
 import com.ninja_squad.dbsetup.operation.Operation;
 
+import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 import static com.ninja_squad.dbsetup.Operations.insertInto;
 import static com.ninja_squad.dbsetup.operation.CompositeOperation.sequenceOf;
 
 public class TestDataSet {
 
-    public static final Operation DUMMY_API_RESOURCES =
+    public static final Operation INSERT_API_RESOURCES =
             sequenceOf(
                     insertInto("API_RESOURCE")
                             .columns("NAME", "URL")
@@ -27,4 +28,5 @@ public class TestDataSet {
                             .values("TAGS.FIND_MATCHING", "/tags")
                             .build());
 
+    public static final Operation DELETE_API_RESOURCES = deleteAllFrom("API_RESOURCE");
 }
