@@ -1,10 +1,11 @@
 package com.kbhit.orangebox.api.gateway.domain.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 
-public class ApiCatalog {
+public class ApiCatalog implements Serializable {
 
     private List<ApiResource> resources;
 
