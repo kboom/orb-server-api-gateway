@@ -7,8 +7,6 @@ import static com.jayway.restassured.RestAssured.given
 
 class GetApiIntegrationTest extends AbstractIntegrationTest {
 
-
-
     def "Gets api from the database"() {
         given:
         def request = given()
