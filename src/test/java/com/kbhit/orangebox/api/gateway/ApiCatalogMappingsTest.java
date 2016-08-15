@@ -1,21 +1,20 @@
 package com.kbhit.orangebox.api.gateway;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kbhit.orangebox.api.gateway.domain.model.ApiResource;
+import com.kbhit.orangebox.api.gateway.domain.model.ApiCatalog;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-public class ApiResourceMappingsTest extends IntegrationTest {
+public class ApiCatalogMappingsTest extends IntegrationTest {
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @Test
-    public void canSerializeApiResource() {
-        assertThat(objectMapper.canSerialize(ApiResource.class)).isTrue();
+    public void canSerializeApiCatalog() {
+        assertThat(objectMapper.canSerialize(ApiCatalog.class)).isTrue();
     }
 
 }
