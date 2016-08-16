@@ -64,7 +64,7 @@ dependencies {
 }
 
 task stage {
-    dependsOn build
+    dependsOn build, flywayMigrate
 }
 
 tasks.withType(BootRunTask) {
