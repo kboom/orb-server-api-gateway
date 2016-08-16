@@ -40,9 +40,9 @@ docker {
 }
 
 flyway {
-    url = System.getProperty("test") // "jdbc:postgresql://ec2-23-21-238-76.compute-1.amazonaws.com:5432/d2asq24cjpotom?user=dqrehewaapzauc&password=SCqP_wxsqaotuimkkVYoSRJm7E&sslmode=require"
-    user = System.getProperty("JDBC_DATABASE_USERNAME")
-    password = System.getProperty("JDBC_DATABASE_PASSWORD")
+    url = System.getenv("JDBC_DATABASE_URL") // "jdbc:postgresql://ec2-23-21-238-76.compute-1.amazonaws.com:5432/d2asq24cjpotom?user=dqrehewaapzauc&password=SCqP_wxsqaotuimkkVYoSRJm7E&sslmode=require"
+    user = System.getenv("JDBC_DATABASE_USERNAME")
+    password = System.getenv("JDBC_DATABASE_PASSWORD")
 }
 
 repositories {
