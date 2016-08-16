@@ -5,10 +5,14 @@ buildscript {
         maven {
             url "http://dl.bintray.com/kboom/gradle-plugins"
         }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
 
     dependencies {
         classpath 'com.kbhit.orangebox:orb-service-plugin:1.3'
+        classpath 'gradle.plugin.com.boxfuse.client:flyway-release:4.0.3'
     }
 
 }
@@ -16,6 +20,7 @@ buildscript {
 apply plugin: 'orb-service'
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'org.flywaydb.flyway'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -30,6 +35,12 @@ orbService {
 docker {
     url = 'http://192.168.99.100:2376'
     certPath = file(System.getProperty('docker.cert.path') ?: "${System.getProperty('user.home')}/.docker/machine/machines/default")
+}
+
+flyway {
+    url = System.getProperty("JDBC_DATABASE_URL")
+    user = System.getProperty("JDBC_DATABASE_USERNAME")
+    password = System.getProperty("JDBC_DATABASE_PASSWORD")
 }
 
 repositories {
@@ -52,6 +63,10 @@ dependencies {
 
 task stage {
     dependsOn build
+}
+
+tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+    systemProperty('spring.profiles.active', 'dev')
 }
 
 task wrapper(type: Wrapper) {
