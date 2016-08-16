@@ -1,0 +1,14 @@
+insert into api_resource (name, url) values ('USER_TRADES.GET_SOME_INCOMING', '/trades/incoming');
+insert into api_resource (name, url) values ('USER_TRADES.GET_SOME_OUTGOING', '/trades/outgoing');
+insert into api_resource (name, url) values ('ITEMS.GET_ONE', '/items/<item_id>');
+insert into api_resource (name, url) values ('ITEMS.GET_SOME', '/items');
+insert into api_resource (name, url) values ('TRADE_ITEMS.GET_SOME_TRADE_ITEMS', '/box/<box_id>/traded');
+insert into api_resource (name, url) values ('TRADE_ITEMS.GET_ALL_BY_IDS', '/trade-items');
+insert into api_resource (name, url) values ('ITEM_CATEGORY.GET_ONE', '/categories/<category_id>');
+insert into api_resource (name, url) values ('ITEM_CATEGORY.GET_ALL_PARENT', '/categories/parent');
+insert into api_resource (name, url) values ('GATHERED_ITEMS.GET_SOME', '/items/gathered');
+insert into api_resource (name, url) values ('BOXED_ITEMS.GET_SOME', '/box/<box_id>/items');
+insert into api_resource (name, url) values ('TRADES.GET_TRADE', '/trade/<trade_id>');
+insert into api_resource (name, url) values ('TRADES.POST_TRADE', '/trades');
+insert into api_resource (name, url) values ('BIDS.GET_LATEST', '/trades/<trade_id>/bids/latest');
+insert into api_resource (name, url) values ('TAGS.FIND_MATCHING', '/tags');
