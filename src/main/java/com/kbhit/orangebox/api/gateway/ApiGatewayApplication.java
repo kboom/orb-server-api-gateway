@@ -1,7 +1,7 @@
 package com.kbhit.orangebox.api.gateway;
 
-import com.kbhit.orangebox.api.gateway.domain.ApiResolver;
-import com.kbhit.orangebox.api.gateway.domain.DatabaseApiResolver;
+import com.kbhit.orangebox.api.gateway.domain.service.ApiResolver;
+import com.kbhit.orangebox.api.gateway.domain.service.DatabaseApiResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
