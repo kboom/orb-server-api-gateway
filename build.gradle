@@ -51,7 +51,6 @@ repositories {
 
 task printJdbcConnectionInfo() {
     println System.getenv('JDBC_DATABASE_URL')
-    outputs.upToDateWhen {false}
 }
 
 dependencies {
@@ -69,7 +68,7 @@ dependencies {
 }
 
 task stage {
-    dependsOn build, printJdbcConnectionInfo
+    dependsOn clean, build, printJdbcConnectionInfo
 }
 
 tasks.withType(BootRunTask) {
