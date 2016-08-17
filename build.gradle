@@ -39,6 +39,8 @@ docker {
     certPath = file(System.getProperty('docker.cert.path') ?: "${System.getProperty('user.home')}/.docker/machine/machines/default")
 }
 
+println System.getenv('JDBC_DATABASE_URL')
+
 flyway {
     url = System.getenv('JDBC_DATABASE_URL') // "jdbc:postgresql://ec2-23-21-238-76.compute-1.amazonaws.com:5432/d2asq24cjpotom?user=dqrehewaapzauc&password=SCqP_wxsqaotuimkkVYoSRJm7E&sslmode=require"
     user = System.getenv('JDBC_DATABASE_USERNAME')
@@ -68,7 +70,7 @@ dependencies {
 }
 
 task stage {
-    dependsOn clean, build, printJdbcConnectionInfo
+    dependsOn build, flywayMigrate
 }
 
 tasks.withType(BootRunTask) {
