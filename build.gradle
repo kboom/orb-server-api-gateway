@@ -68,15 +68,7 @@ dependencies {
 }
 
 task stage {
-    dependsOn clean, build
-
-    doFirst {
-        println System.getenv('JDBC_DATABASE_URL')
-    }
-
-    doLast {
-        println System.getenv('JDBC_DATABASE_URL')
-    }
+    dependsOn clean, build, flywayMigrate
 }
 
 tasks.withType(BootRunTask) {
