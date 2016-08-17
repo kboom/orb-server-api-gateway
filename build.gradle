@@ -68,7 +68,7 @@ dependencies {
 }
 
 task stage {
-    dependsOn build, printJdbcConnectionInfo, flywayMigrate
+    dependsOn build, printJdbcConnectionInfo
 }
 
 tasks.withType(BootRunTask) {
