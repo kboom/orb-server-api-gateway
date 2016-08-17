@@ -39,12 +39,19 @@ docker {
     certPath = file(System.getProperty('docker.cert.path') ?: "${System.getProperty('user.home')}/.docker/machine/machines/default")
 }
 
-static def asJdbcUrl(URI dbUri) {
-    return "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-}
+def currentDatabase = {
+    URI dbUri = new URI(System.getenv("DATABASE_URL"));
+    return [
+            user: dbUri.getUserInfo().split(":")[0],
+            password: dbUri.getUserInfo().split(":")[1],
+            url   : "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath()
+    ]
+}()
 
 flyway {
-    url = asJdbcUrl(new URI(System.getenv("DATABASE_URL")))
+    url = currentDatabase.url
+    user = currentDatabase.user
+    password = currentDatabase.password
 }
 
 repositories {
