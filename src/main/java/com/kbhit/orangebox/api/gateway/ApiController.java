@@ -16,7 +16,6 @@ class ApiController {
     @Autowired
     private ApiResolver apiResolver;
 
-    @CrossOrigin
     @ApiOperation(value = "api", nickname = "api")
     @RequestMapping(value = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
